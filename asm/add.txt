@@ -1,0 +1,11 @@
+.section .text.exper_iai::add,"ax",@progbits
+	.globl	exper_iai::add
+	.p2align	4, 0x90
+	.type	exper_iai::add,@function
+exper_iai::add:
+
+	.cfi_startproc
+	lea rax, [rdi + rsi]
+	ret
+
+	.size	exper_iai::add, .Lfunc_end0-exper_iai::add

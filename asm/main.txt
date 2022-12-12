@@ -1,0 +1,52 @@
+.section .text.exper_iai::main,"ax",@progbits
+	.p2align	4, 0x90
+	.type	exper_iai::main,@function
+exper_iai::main:
+
+	.cfi_startproc
+	sub rsp, 72
+	.cfi_def_cfa_offset 80
+
+	mov edi, 3
+	mov esi, 3
+	call qword ptr [rip + exper_iai::add@GOTPCREL]
+
+	mov qword ptr [rsp], rax
+
+	cmp rax, 6
+
+	jne .LBB7_2
+
+	mov rax, rsp
+
+	mov qword ptr [rsp + 8], rax
+	mov rax, qword ptr [rip + core::fmt::num::imp::<impl core::fmt::Display for usize>::fmt@GOTPCREL]
+	mov qword ptr [rsp + 16], rax
+
+	lea rax, [rip + .L__unnamed_5]
+
+	mov qword ptr [rsp + 24], rax
+	mov qword ptr [rsp + 32], 2
+	mov qword ptr [rsp + 40], 0
+	lea rax, [rsp + 8]
+
+	mov qword ptr [rsp + 56], rax
+	mov qword ptr [rsp + 64], 1
+	lea rdi, [rsp + 24]
+
+	call qword ptr [rip + std::io::stdio::_print@GOTPCREL]
+
+	add rsp, 72
+	.cfi_def_cfa_offset 8
+	ret
+
+.LBB7_2:
+	.cfi_def_cfa_offset 80
+	mov qword ptr [rsp + 24], 0
+
+	mov rdi, rsp
+	lea rsi, [rsp + 24]
+	call core::panicking::assert_failed
+	ud2
+
+	.size	exper_iai::main, .Lfunc_end7-exper_iai::main
