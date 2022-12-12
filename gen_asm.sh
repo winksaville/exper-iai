@@ -18,12 +18,12 @@ gen_bin_asm () {
     cargo asm --bin exper_iai "exper_iai::$1" > asm/$1.txt
 }
 
-# Use `cargo asm --bench bench_iai` to see list of functions
-gen_bench_iai_asm() {
-    #cargo asm --rust --bench bench_iai "bench_iai::iai_wrappers::$1" > asm/$1.txt
-    cargo asm --bench bench_iai "bench_iai::iai_wrappers::$1" > asm/$1.txt
+# Use `cargo asm --bench iai` to see list of functions
+gen_iai_asm() {
+    #cargo asm --rust --bench iai "iai::iai_wrappers::$1" > asm/$1.txt
+    cargo asm --bench iai "iai::iai_wrappers::$1" > asm/$1.txt
 }
 
 gen_lib_asm "add"
 gen_bin_asm "main"
-gen_bench_iai_asm "bench_iai_add"
+gen_iai_asm "iai_add"

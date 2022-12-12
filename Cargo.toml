@@ -12,8 +12,8 @@ criterion = "0.4.0"
 iai = "0.1.1"
 
 [[bench]]
-name = "bench_iai"
-path = "benches/bench_iai.rs"
+name = "iai"
+path = "benches/iai.rs"
 harness = false
 
 
